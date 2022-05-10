@@ -5,23 +5,49 @@ namespace Prove02
 {
     public class Dealer
     {
-        Deck deck = new Deck(); 
         List<Card> dealerHand = new List<Card>();
         List<Card> playerHand = new List<Card>();
-        bool isPlaying = true;
+        bool isPlaying = true, resetDeck = true, validResponse;
+        int points, wagerdPoints;
         public Dealer()
         {
 
         }
-        
-        
+
+
 
 
         public void StartGame()
         {
-            while(isPlaying)
+            Deck deck = new Deck();
+            deck.Shuffle();
+            while (isPlaying)
             {
-                deck.Shuffle();
+                points = 1000;
+                do
+                {
+                    deck = new Deck();
+                    deck.Shuffle();
+                    resetDeck = false;
+                } while (resetDeck);
+
+                do
+                {
+                Console.WriteLine($"You have {points} points. How many would you like to wager?");
+                string wageredPointsStr = Console.ReadLine();
+                try
+                {
+                    int wageredPoints = Int32.Parse(wageredPointsStr);
+                    validResponse = true;
+                }
+                catch
+                {
+                    Console.WriteLine($"Your wager was not valid, please enter a new wager.\n");
+                    validResponse = false;
+                }
+                } while (!validResponse);
+
+                
                 dealerHand = deck.Deal();
                 playerHand = deck.Deal();
                 Console.WriteLine($"The dealer is showing a(n) {dealerHand[0].Value} of {dealerHand[0].Suit}.");
