@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Logan\\Documents\\CSE 210\\Projects\\Prove02\\Prove02.csproj": {}
+    "F:\\School\\CSE 210\\Projects\\Ponder02\\Prove02.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Logan\\Documents\\CSE 210\\Projects\\Prove02\\Prove02.csproj": {
+    "F:\\School\\CSE 210\\Projects\\Ponder02\\Prove02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Logan\\Documents\\CSE 210\\Projects\\Prove02\\Prove02.csproj",
+        "projectUniqueName": "F:\\School\\CSE 210\\Projects\\Ponder02\\Prove02.csproj",
         "projectName": "Prove02",
-        "projectPath": "C:\\Users\\Logan\\Documents\\CSE 210\\Projects\\Prove02\\Prove02.csproj",
-        "packagesPath": "C:\\Users\\Logan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Logan\\Documents\\CSE 210\\Projects\\Prove02\\obj\\",
+        "projectPath": "F:\\School\\CSE 210\\Projects\\Ponder02\\Prove02.csproj",
+        "packagesPath": "C:\\Users\\vipe1.DESKTOP-QDPLFGI\\.nuget\\packages\\",
+        "outputPath": "F:\\School\\CSE 210\\Projects\\Ponder02\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Logan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "D:\\Appdata\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }

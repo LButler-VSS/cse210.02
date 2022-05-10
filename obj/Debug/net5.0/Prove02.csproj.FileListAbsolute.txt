@@ -1,0 +1,16 @@
+F:\School\CSE 210\Projects\Ponder02\bin\Debug\net5.0\Prove02.exe
+F:\School\CSE 210\Projects\Ponder02\bin\Debug\net5.0\Prove02.deps.json
+F:\School\CSE 210\Projects\Ponder02\bin\Debug\net5.0\Prove02.runtimeconfig.json
+F:\School\CSE 210\Projects\Ponder02\bin\Debug\net5.0\Prove02.runtimeconfig.dev.json
+F:\School\CSE 210\Projects\Ponder02\bin\Debug\net5.0\Prove02.dll
+F:\School\CSE 210\Projects\Ponder02\bin\Debug\net5.0\ref\Prove02.dll
+F:\School\CSE 210\Projects\Ponder02\bin\Debug\net5.0\Prove02.pdb
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.csproj.AssemblyReference.cache
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.GeneratedMSBuildEditorConfig.editorconfig
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.AssemblyInfoInputs.cache
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.AssemblyInfo.cs
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.csproj.CoreCompileInputs.cache
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.dll
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\ref\Prove02.dll
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.pdb
+F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.genruntimeconfig.cache
