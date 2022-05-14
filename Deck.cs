@@ -26,6 +26,7 @@ namespace Prove02
                                 {
                                     card.Symbol = "Ace";
                                     card.Value = 11;
+                                    card.AceValue = 1;
                                 }
                                 else if (cardValue == 11)
                                 {
@@ -64,6 +65,7 @@ namespace Prove02
                                 {
                                     card.Symbol = "Ace";
                                     card.Value = 11;
+                                    card.AceValue = 1;
                                 }
                                 else if (cardValue == 11)
                                 {
@@ -101,6 +103,7 @@ namespace Prove02
                                 {
                                     card.Symbol = "Ace";
                                     card.Value = 11;
+                                    card.AceValue = 1;
                                 }
                                 else if (cardValue == 11)
                                 {
@@ -138,6 +141,7 @@ namespace Prove02
                                 {
                                     card.Symbol = "Ace";
                                     card.Value = 11;
+                                    card.AceValue = 1;
                                 }
                                 else if (cardValue == 11)
                                 {

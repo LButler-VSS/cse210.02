@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Vipe1\\.nuget\\packages\\": {}
+    "C:\\Users\\vipe1.DESKTOP-QDPLFGI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vipe1\\Documents\\School\\CS210\\cse210-02\\Prove02.csproj",
+      "projectUniqueName": "F:\\School\\CSE 210\\Projects\\Ponder02\\Prove02.csproj",
       "projectName": "Prove02",
-      "projectPath": "C:\\Users\\Vipe1\\Documents\\School\\CS210\\cse210-02\\Prove02.csproj",
-      "packagesPath": "C:\\Users\\Vipe1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vipe1\\Documents\\School\\CS210\\cse210-02\\obj\\",
+      "projectPath": "F:\\School\\CSE 210\\Projects\\Ponder02\\Prove02.csproj",
+      "packagesPath": "C:\\Users\\vipe1.DESKTOP-QDPLFGI\\.nuget\\packages\\",
+      "outputPath": "F:\\School\\CSE 210\\Projects\\Ponder02\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Vipe1\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "D:\\Appdata\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

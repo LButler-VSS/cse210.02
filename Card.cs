@@ -16,5 +16,8 @@ namespace Prove02
 
         public int Value
         { get; set; }
+
+        public int AceValue
+        { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace Prove02
     {
         List<Card> dealerHand = new List<Card>();
         List<Card> playerHand = new List<Card>();
-        bool isPlaying = true, resetDeck = true, validResponse, bust;
+        bool isPlaying = true, validResponse, bust = false, /*playerAces = false, dealerAces = false,*/ dealerFin;
         int points, wageredPoints, handValue;
         string hitOrStand;
 
@@ -18,16 +18,14 @@ namespace Prove02
 
         public void StartGame()
         {
+            Console.WriteLine("This blackjack game treats Aces only as an 11.");
             Deck deck = new Deck();
             points = 1000;
             while (isPlaying)
             {
-                do
-                {
-                    deck = new Deck();
-                    deck.Shuffle();
-                    resetDeck = false;
-                } while (resetDeck);
+                deck = new Deck();
+                deck.Shuffle();
+                bust = false;
 
                 do
                 {
@@ -50,15 +48,16 @@ namespace Prove02
                     }
                 } while (!validResponse);
 
-
+                dealerHand.RemoveAll(dealerHand => dealerHand.Value == 0);
+                playerHand.RemoveAll(playerHand => playerHand.Value == 0);
                 dealerHand = deck.Deal(2);
                 playerHand = deck.Deal(2);
-                Console.WriteLine($"The dealer is showing a(n) {dealerHand[0].Value} of {dealerHand[0].Suit}.");
+                Console.WriteLine($"\nThe dealer is showing a(n) {dealerHand[0].Value} of {dealerHand[0].Suit}.");
                 Console.WriteLine($"Your cards are a(n) {playerHand[0].Value} of {playerHand[0].Suit} and a(n) {playerHand[1].Value} of {playerHand[1].Suit}.");
 
                 if (checkBlackjack("player"))
                 {
-                    Console.WriteLine("You have blackjack!");
+                    Console.WriteLine("\nYou have blackjack!");
                     if (checkBlackjack("dealer"))
                     {
                         Console.WriteLine($"The dealer has blackjack as well with a(n) {dealerHand[0].Value} of {dealerHand[0].Suit} and a(n) {dealerHand[1].Value} of {dealerHand[1].Suit}.");
@@ -68,7 +67,7 @@ namespace Prove02
                     else
                     {
                         points += wageredPoints * 2;
-                        Console.WriteLine($"You win {(wageredPoints * 2)}. Your new point total is {points}.");
+                        Console.WriteLine($"\nYou win {(wageredPoints * 2)}. Your new point total is {points}.");
                         checkPlaying();
                     }
                 }
@@ -76,37 +75,27 @@ namespace Prove02
                 else if (checkBlackjack("dealer"))
                 {
                     Console.WriteLine($"The dealer has blackjack with a(n) {dealerHand[0].Value} of {dealerHand[0].Suit} and a(n) {dealerHand[1].Value} of {dealerHand[1].Suit}.");
-                    Console.WriteLine($"You lose your wagered {points} points.");
-                    points -= wageredPoints;
-                    if (points == 0)
-                        isPlaying = false;
-                    else
-                        checkPlaying();
+                    changePointTotal(false);
                 }
 
                 else
                 {
                     do
                     {
-                        if (bust)
                         {
-                            hitOrStand = "s";
-                        }
-                        else
-                        {
-                            Console.WriteLine("Would you like to hit or stand? (h/s)");
+                            Console.WriteLine("\nWould you like to hit or stand? (h/s)");
                             hitOrStand = Console.ReadLine();
                             if (hitOrStand == "h")
                             {
                                 List<Card> hitCard = new List<Card>();
                                 hitCard = (deck.Deal(1));
                                 playerHand.Add(hitCard[0]);
-                                Console.WriteLine($"Your cards are:");
+                                Console.WriteLine($"\nYour cards are:");
                                 foreach (Card card in playerHand)
                                 {
                                     Console.WriteLine($"{card.Value} of {card.Suit}");
                                 }
-                                checkBust();
+                                checkBust("player");
                                 validResponse = true;
                             }
                             else if (hitOrStand == "s")
@@ -120,12 +109,66 @@ namespace Prove02
                             }
                         }
                     } while (hitOrStand == "h" || !validResponse);
-                    
-                    Console.WriteLine($"Your hand has a value of {handTotal("player")}.");
-                }
 
-                //placeholder while testing
-                isPlaying = false;
+                    Console.WriteLine($"Your hand has a value of {handTotal("player", false)}.");
+                    
+                    if (bust)
+                    {
+                        Console.WriteLine($"\nThe dealer's cards are:");
+                                foreach (Card card in dealerHand)
+                                {
+                                    Console.WriteLine($"{card.Value} of {card.Suit}");
+                                }
+                        changePointTotal(false);
+                    }
+                    else
+                    {
+                        dealerFin = false;
+                        bust = false;
+                        Console.WriteLine($"\nThe dealer's cards are:");
+                                foreach (Card card in dealerHand)
+                                {
+                                    Console.WriteLine($"{card.Value} of {card.Suit}");
+                                }
+                        while (!bust & !dealerFin)
+                        {
+                            //checkAces("dealer");
+                            
+                            if (handTotal("dealer", false) < 17)
+                            {
+                                List<Card> hitCard = new List<Card>();
+                                hitCard = (deck.Deal(1));
+                                Console.WriteLine($"{hitCard[0].Value} of {hitCard[0].Suit}");
+                                dealerHand.Add(hitCard[0]);
+                            }
+                            else
+                            {
+                                dealerFin = true;
+                                checkBust("dealer");
+                            }
+                        }
+                        Console.WriteLine($"The dealer's hand has a value of {handTotal("dealer", false)}.");
+
+                        if ((handTotal("player", false) > handTotal("dealer", false)) | bust)
+                        {
+                            changePointTotal(true);
+                        }
+                        else if (!bust && (handTotal("player", false) < handTotal("dealer", false)))
+                        {
+                            changePointTotal(false);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"The hand is a tie.");
+                            checkPlaying();
+                        }
+                    }
+                }
+            }
+
+            if (!isPlaying)
+            {
+                Console.WriteLine("Thanks for playing!");
             }
         }
 
@@ -173,29 +216,101 @@ namespace Prove02
             } while (!validResponse);
         }
 
-        public bool checkBust()
+        public void checkBust(string player)
         {
-            return false;
+            if (handTotal(player, false) > 21)
+            {
+                Console.WriteLine("Busted!");
+                hitOrStand = "s";
+                bust = true;
+            }
+            else
+                bust = false;
         }
 
-        public int handTotal(string player)
+        public int handTotal(string player, bool Ace)
         {
             handValue = 0;
+            if (Ace)
+            {
+                if (player == "player")
+                {
+                    foreach (Card card in playerHand)
+                    {
+                        if (card.Value == 11)
+                            handValue += card.AceValue;
+                        else
+                            handValue += card.Value;
+                    }
+                }
+                else
+                {
+                    foreach (Card card in dealerHand)
+                    {
+                        if (card.Value == 11)
+                            handValue = +card.AceValue;
+                        handValue += card.Value;
+                    }
+                }
+                return handValue;
+            }
+            else
+            {
+                if (player == "player")
+                {
+                    foreach (Card card in playerHand)
+                    {
+                        handValue += card.Value;
+                    }
+                }
+                else
+                {
+                    foreach (Card card in dealerHand)
+                    {
+                        handValue += card.Value;
+                    }
+                }
+                return handValue;
+            }
+        }
+
+        public void changePointTotal(bool change)
+        {
+            if (change)
+            {
+                points += wageredPoints;
+                Console.WriteLine($"\nYou won {wageredPoints} point(s). Your new total is {points}.");
+                checkPlaying();
+            }
+            else if (!change)
+            {
+                points -= wageredPoints;
+                Console.WriteLine($"\nYou lost {wageredPoints} point(s). Your new total is {points}.");
+                if (points == 0)
+                    isPlaying = false;
+                else
+                    checkPlaying();
+            }
+        }
+/*
+        public void checkAces(string player)
+        {
             if (player == "player")
             {
                 foreach (Card card in playerHand)
                 {
-                    handValue += card.Value;
+                    if (card.Value == 11)
+                        playerAces = true;
                 }
             }
             else
             {
                 foreach (Card card in dealerHand)
                 {
-                    handValue += card.Value;
+                    if (card.Value == 11)
+                        dealerAces = true;
                 }
             }
-            return handValue;
-        }
+        }*/
     }
 }
