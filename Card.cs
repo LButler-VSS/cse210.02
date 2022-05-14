@@ -8,10 +8,13 @@ namespace Prove02
         {
 
         }
-        public string Value
+        public string Symbol
         { get; set; }
 
         public string Suit
+        { get; set; }
+
+        public int Value
         { get; set; }
     }
 }

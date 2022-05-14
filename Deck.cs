@@ -23,15 +23,30 @@ namespace Prove02
                                 Card card = new Card();
                                 cardValue++;
                                 if (cardValue == 1)
-                                    card.Value = "Ace";
+                                {
+                                    card.Symbol = "Ace";
+                                    card.Value = 11;
+                                }
                                 else if (cardValue == 11)
-                                    card.Value = "Jack";
+                                {
+                                    card.Symbol = "Jack";
+                                    card.Value = 10;
+                                }
                                 else if (cardValue == 12)
-                                    card.Value = "Queen";
+                                {
+                                    card.Symbol = "Queen";
+                                    card.Value = 10;
+                                }
                                 else if (cardValue == 13)
-                                    card.Value = "King";
+                                {
+                                    card.Symbol = "King";
+                                    card.Value = 10;
+                                }
                                 else
-                                    card.Value = Convert.ToString(cardValue);
+                                {
+                                    card.Symbol = Convert.ToString(cardValue);
+                                    card.Value = cardValue;
+                                }
                                 card.Suit = "Hearts";
                                 deck.Add(card);
                             }
@@ -46,15 +61,30 @@ namespace Prove02
                                 Card card = new Card();
                                 cardValue++;
                                 if (cardValue == 1)
-                                    card.Value = "Ace";
+                                {
+                                    card.Symbol = "Ace";
+                                    card.Value = 11;
+                                }
                                 else if (cardValue == 11)
-                                    card.Value = "Jack";
+                                {
+                                    card.Symbol = "Jack";
+                                    card.Value = 10;
+                                }
                                 else if (cardValue == 12)
-                                    card.Value = "Queen";
+                                {
+                                    card.Symbol = "Queen";
+                                    card.Value = 10;
+                                }
                                 else if (cardValue == 13)
-                                    card.Value = "King";
+                                {
+                                    card.Symbol = "King";
+                                    card.Value = 10;
+                                }
                                 else
-                                    card.Value = Convert.ToString(cardValue);
+                                {
+                                    card.Symbol = Convert.ToString(cardValue);
+                                    card.Value = cardValue;
+                                }
                                 card.Suit = "Spades";
                                 deck.Add(card);
                             }
@@ -68,15 +98,30 @@ namespace Prove02
                                 Card card = new Card();
                                 cardValue++;
                                 if (cardValue == 1)
-                                    card.Value = "Ace";
+                                {
+                                    card.Symbol = "Ace";
+                                    card.Value = 11;
+                                }
                                 else if (cardValue == 11)
-                                    card.Value = "Jack";
+                                {
+                                    card.Symbol = "Jack";
+                                    card.Value = 10;
+                                }
                                 else if (cardValue == 12)
-                                    card.Value = "Queen";
+                                {
+                                    card.Symbol = "Queen";
+                                    card.Value = 10;
+                                }
                                 else if (cardValue == 13)
-                                    card.Value = "King";
+                                {
+                                    card.Symbol = "King";
+                                    card.Value = 10;
+                                }
                                 else
-                                    card.Value = Convert.ToString(cardValue);
+                                {
+                                    card.Symbol = Convert.ToString(cardValue);
+                                    card.Value = cardValue;
+                                }
                                 card.Suit = "Diamonds";
                                 deck.Add(card);
                             }
@@ -90,15 +135,30 @@ namespace Prove02
                                 Card card = new Card();
                                 cardValue++;
                                 if (cardValue == 1)
-                                    card.Value = "Ace";
+                                {
+                                    card.Symbol = "Ace";
+                                    card.Value = 11;
+                                }
                                 else if (cardValue == 11)
-                                    card.Value = "Jack";
+                                {
+                                    card.Symbol = "Jack";
+                                    card.Value = 10;
+                                }
                                 else if (cardValue == 12)
-                                    card.Value = "Queen";
+                                {
+                                    card.Symbol = "Queen";
+                                    card.Value = 10;
+                                }
                                 else if (cardValue == 13)
-                                    card.Value = "King";
+                                {
+                                    card.Symbol = "King";
+                                    card.Value = 10;
+                                }
                                 else
-                                    card.Value = Convert.ToString(cardValue);
+                                {
+                                    card.Symbol = Convert.ToString(cardValue);
+                                    card.Value = cardValue;
+                                }
                                 card.Suit = "Clubs";
                                 deck.Add(card);
                             }
@@ -116,7 +176,7 @@ namespace Prove02
             int n = deck.Count;
             List<Card> list = new List<Card>();
 
-            while (n>1)
+            while (n > 1)
             {
                 n--;
                 int k = rng.Next(n + 1);
@@ -125,19 +185,22 @@ namespace Prove02
                 deck[n] = list[0];
                 list.RemoveAt(0);
             }
+            /*
             foreach (var value in deck)
             {
-                Console.WriteLine($"{value.Value} of {value.Suit}");
+                Console.WriteLine($"{value.Symbol} of {value.Suit}");
             }
+            */
         }
 
-        public List<Card> Deal()
+        public List<Card> Deal(int i)
         {
             List<Card> dealtCards = new List<Card>();
-            dealtCards.Add(deck[0]);
-            dealtCards.Add(deck[1]);
-            deck.RemoveAt(0);
-            deck.RemoveAt(0);
+            for (int j = 0; j < i; j++)
+            {
+                dealtCards.Add(deck[0]);
+                deck.RemoveAt(0);
+            }
             return dealtCards;
         }
     }

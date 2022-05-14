@@ -14,3 +14,19 @@ F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.dll
 F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\ref\Prove02.dll
 F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.pdb
 F:\School\CSE 210\Projects\Ponder02\obj\Debug\net5.0\Prove02.genruntimeconfig.cache
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\bin\Debug\net5.0\Prove02.exe
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\bin\Debug\net5.0\Prove02.deps.json
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\bin\Debug\net5.0\Prove02.runtimeconfig.json
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\bin\Debug\net5.0\Prove02.runtimeconfig.dev.json
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\bin\Debug\net5.0\Prove02.dll
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\bin\Debug\net5.0\Prove02.pdb
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\Prove02.csproj.AssemblyReference.cache
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\Prove02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\Prove02.AssemblyInfoInputs.cache
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\Prove02.AssemblyInfo.cs
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\Prove02.csproj.CoreCompileInputs.cache
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\Prove02.dll
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\refint\Prove02.dll
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\Prove02.pdb
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\Prove02.genruntimeconfig.cache
+C:\Users\Vipe1\Documents\School\CS210\cse210-02\obj\Debug\net5.0\ref\Prove02.dll
